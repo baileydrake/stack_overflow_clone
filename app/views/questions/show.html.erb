@@ -8,7 +8,11 @@
 <p>Responses:</p>
 <ol>
 <% @question.responses.each do |response| %>
- <li><%= response.response %></li>
+ <% if @question.user_id == @current_user.id %>
+   <li><%= response.response %> <%= link_to 'Favorite', link_path(response, "response[askers_choice]" => (true), :method => :patch) %></li>
+   <% else %>
+     <li><%= response.response %> </li>
+   <% end %>
  <% end %>
 </ol>
 

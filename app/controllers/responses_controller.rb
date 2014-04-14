@@ -1,4 +1,5 @@
 class ResponsesController < ApplicationController
+  before_filter :authorize, only: [:new, :create, :destroy]
   before_action :set_response, only: [:edit, :update, :destroy]
 
   def new
