@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @question.question %>
+</p>
+
+<p>Responses:</p>
+<ol>
+<% @question.responses.each do |response| %>
+ <li><%= response.response %></li>
+ <% end %>
+</ol>
+
+
+<p>Add a Response:</p>
+<%= render "responses/form" %>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
