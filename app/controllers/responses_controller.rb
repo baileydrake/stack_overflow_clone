@@ -13,7 +13,9 @@ class ResponsesController < ApplicationController
   end
 
   def update
-
+    @response.update(response_params)
+    flash[:notice] = "Response favorited!"
+    redirect_to("/questions/#{@response.question_id}")
   end
 
   def edit
@@ -30,7 +32,7 @@ class ResponsesController < ApplicationController
   end
 
   def response_params
-    params.require(:response).permit(:response)
+    params.require(:response).permit(:response, :askers_choice)
   end
 
 end

@@ -1,26 +1,16 @@
-<h1>Listing questions</h1>
+<h1>SmackOverflow</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Question</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<h4>Questions: </h4>
 
-  <tbody>
+<ul id="question">
     <% @questions.each do |question| %>
-      <tr>
-        <td><a href="questions/<%= question.id %>"><%= question.question %></a></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <li id=><a href="questions/<%= question.id %>"><%= question.question %></a>
+        <%= link_to 'Edit', edit_question_path(question) %>
+        <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></li>
     <% end %>
-  </tbody>
-</table>
-
+</ul>
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_question_path, id: "new_link", remote: true %>
+
+

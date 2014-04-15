@@ -11,6 +11,8 @@ Stack::Application.routes.draw do
     resources :responses
   end
 
+  resources :responses
+
   root 'questions#index'
 
 

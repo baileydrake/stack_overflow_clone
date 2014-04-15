@@ -9,13 +9,12 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1
   def show
-
   end
 
   # GET /questions/new
   def new
     @question = Question.new
-    @current_user ||=User.find(session[:user_id]) if session[:user_id]
+
   end
 
   # GET /questions/1/edit
@@ -29,8 +28,10 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.js
       else
         format.html { render action: 'new' }
+        format.js
       end
     end
   end
@@ -51,6 +52,7 @@ class QuestionsController < ApplicationController
     @question.destroy
     respond_to do |format|
       format.html { redirect_to questions_url }
+      format.js
     end
   end
 

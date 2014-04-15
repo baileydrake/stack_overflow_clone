@@ -1,9 +1,15 @@
 == Stack Overflow clone
 
+Bailey Drake and David Adams
+Monday, April 14, 2014
+Epicodus, week 9, day 1
+----
 
 * As a user, I want to ask a question, so that I can get help with a programming problem I'm having. Users must have an account and sign in to ask questions. [DONE]
 
-* As a user, I want to answer a question, so that I can help somebody else out. Use AJAX to add a response to the question's page without reloading it!
+* Update to use AJAX to add a new question [DONE]
+
+* As a user, I want to answer a question, so that I can help somebody else out. [DONE]
 
 * As a user, I want to view a questions and its responses, so that I can get help if I'm having the same problem. [DONE]
 
@@ -15,11 +21,3 @@
 
 * As a user, I want my searches to also look through responses, to increase the chances of finding what I'm looking for. Hint: Create a PORO called Search that runs searches on Question and Response and combines the answers, something like:
 
-
-CRUD for Questions
-CRUD for Responses
-add question, response relationship
-USER authentication
-CRUD for Users
-
-need to: choose the best answer, display it first in the list
